@@ -1,6 +1,7 @@
 <script lang="ts">
     import GalleryWindowContent from "./GalleryWindowContent.svelte"
     import DesktopIcon from "./DesktopIcon.svelte";
+    import AiChatWindowContent from "./AIChatWindowContent.svelte";
 
     let socialsMenuDisplay: boolean = false;
     function setSocialMenuDisplayTrue(){
@@ -52,6 +53,10 @@
             <GalleryWindowContent text="I love Capybaras!">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptatem ducimus recusandae commodi, vero culpa praesentium labore. Mollitia perferendis aut cumque hic, pariatur maxime, minima iusto odio, ratione dignissimos cupiditate.
             </GalleryWindowContent>
+        </DesktopIcon>
+
+        <DesktopIcon text="AI Chat", src="Windows 7 Connect to Internet.png">
+            <AiChatWindowContent></AiChatWindowContent>
         </DesktopIcon>
     </div>
   </div>
