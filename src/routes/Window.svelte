@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="https://unpkg.com/7.css">
-
 <script lang="ts">
 	import {onMount} from "svelte";
 
@@ -62,6 +60,7 @@
         <div class="window-body has-space">
             <slot></slot>
         </div>
-      </div></section>
+      </div>
+</section>
 
 <svelte:window bind:innerWidth bind:outerWidth bind:innerHeight bind:outerHeight on:mouseup={onMouseUp} on:mousemove={onMouseMove} />

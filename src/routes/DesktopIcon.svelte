@@ -18,12 +18,12 @@
 <div on:click={function(){display=true}} class="p-5 flex">
     <div>
         <img src={PATH+src} alt="">
-        <p class="outlined-text text-center">{text}</p>
+        <p class="outlined-text text-center text-md">{text}</p>
     </div>
 </div>
 
 {#if display}
     <Window text={text} onClose={function(){display=false}}>
-<slot></slot>
-</Window>
+        <slot></slot>
+    </Window>
 {/if}

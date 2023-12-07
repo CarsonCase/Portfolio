@@ -59,8 +59,14 @@ const handleSubmit = async()=>{
 }
 </script>
 
-<div class="h-[500px] w-[600px] overflow-y-auto">
+<div class="h-[500px] w-[600px] overflow-y-auto flex flex-col justify-end">
     <div class="container">
+        {#if chatMessages.length == 0}
+        <div class="p-4 opacity-50">
+            <div class="wordart rainbow"><span class="text">AI Chatbot</span></div>
+            <p>It's like I'm right here with you...</p>
+        </div>
+        {/if}
         {#each chatMessages as message}
         <div role="tooltip" class="is-top is-right px-2 my-5">
             {message.content}
@@ -77,11 +83,13 @@ const handleSubmit = async()=>{
         </div>
         {/if}
     </div>
-    <div class="object-bottom">
-        <form on:submit|preventDefault={()=> handleSubmit()}>
-            <textarea class="w-full" name="" id="" bind:value={query} cols="30" rows="7"></textarea>
-            <button type="submit">Submit</button>
-        </form>
+    <div class="">
+        <div>
+            <form on:submit|preventDefault={()=> handleSubmit()}>
+                <textarea class="w-full" name="" id="" bind:value={query} cols="30" rows="7" placeholder="Enter prompt here..."></textarea>
+                <button class="my-2" type="submit">Submit</button>
+            </form>
+        </div>
     </div>
     <div bind:this={scrollToDiv}></div>
 

@@ -3,12 +3,23 @@ import type {RequestHandler} from '@sveltejs/kit'
 import type OpenAi from "openai"
 import {getTokens} from "$lib/tokenizer"
 import {json} from "@sveltejs/kit"
+import { promises as fs } from 'fs';
+async function readFileAsString(filePath: string): Promise<string> {
+  try {
+    const content = await fs.readFile(filePath, 'utf-8');
+    return content;
+  } catch (error) {
+    console.error(`Error reading file: ${error.message}`);
+    throw error;
+  }
+}
 
 const moderationURL = "https://api.openai.com/v1/moderations"
 const openAiURL = "https://api.openai.com/v1/chat/completions"
-const prompt = "You are a turtle farmer who is extremely enthusiastic about your job and has a hard time letting others speak because you are so excited about your work"
 
 export const POST: RequestHandler = async({request}) => {
+    const prompt = await readFileAsString("static/prompt.txt");
+    console.log(prompt)
     try{
         if(!OPENAI_KEY){
             throw new Error("OPENAI_KEY env variable not found")
