@@ -81,6 +81,12 @@
         <DesktopIcon text="AI Chat" src="Windows 7 Connect to Internet.png">
             <AiChatWindowContent></AiChatWindowContent>
         </DesktopIcon>
+
+        <DesktopIcon text="Flight Price Tracker" src="Windows 7 Time and Date.png">
+            <GalleryWindowContent text="Flight Price Tracker" link="http://81.4.109.207/">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim, numquam alias tenetur corrupti eligendi ad maxime. Aliquam quisquam ipsum ut doloribus tempora nemo quae, alias exercitationem officia excepturi corrupti eum.
+            </GalleryWindowContent>
+        </DesktopIcon>
         {:else}
         <div class="flex flex-col text-center">
             <h1>Please access this site on desktop</h1>
