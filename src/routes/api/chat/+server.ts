@@ -4,6 +4,12 @@ import type OpenAi from "openai"
 import {getTokens} from "$lib/tokenizer"
 import {json} from "@sveltejs/kit"
 import { promises as fs } from 'fs';
+import type {Config} from "@sveltejs/adapter-vercel";
+
+export const config:Config={
+    runtime: "edge"
+}
+
 async function readFileAsString(filePath: string): Promise<string> {
   try {
     const content = await fs.readFile(filePath, 'utf-8');
