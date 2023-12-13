@@ -87,6 +87,8 @@
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim, numquam alias tenetur corrupti eligendi ad maxime. Aliquam quisquam ipsum ut doloribus tempora nemo quae, alias exercitationem officia excepturi corrupti eum.
             </GalleryWindowContent>
         </DesktopIcon>
+
+        <DesktopIcon text="ETH Pizza"></DesktopIcon>
         {:else}
         <div class="flex flex-col text-center">
             <h1>Please access this site on desktop</h1>
