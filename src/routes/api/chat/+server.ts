@@ -14,7 +14,7 @@ async function readFileAsString(filePath: string): Promise<string> {
   try {
     const txts = import.meta.glob('./*.txt', { as: 'text' });
     const content = txts[base+"/static/prompt.txt"];
-    return content;
+    return content as unknown as Promise<string>;
   } catch (error) {
     console.error(`Error reading file: ${error.message}`);
     throw error;
