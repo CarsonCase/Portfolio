@@ -3,6 +3,7 @@
     import DesktopIcon from "./DesktopIcon.svelte";
     import AiChatWindowContent from "./AIChatWindowContent.svelte";
     import MenuBar from "./MenuBar.svelte";
+    import { base } from '$app/paths';
 
     let contactMenuDisplay: boolean = false;
 
@@ -27,7 +28,7 @@
                 
 
                     <div class="flex justify-center">
-                        <img class="h-[300px]" src="../../static/Headshot.jpg" alt="">
+                        <img class="h-[300px]" src="{base}/static/Headshot.jpg" alt="">
                     </div>
 
                 </div>

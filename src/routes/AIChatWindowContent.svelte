@@ -1,6 +1,5 @@
 <script lang="ts">
 import type OpenAi from "openai"
-	import { Declaration } from "postcss";
 	import { SSE } from "sse.js";
 
 let query: string = ""
