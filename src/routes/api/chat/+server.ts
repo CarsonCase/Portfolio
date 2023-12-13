@@ -3,7 +3,7 @@ import type {RequestHandler} from '@sveltejs/kit'
 import type OpenAi from "openai"
 import {getTokens} from "$lib/tokenizer"
 import {json} from "@sveltejs/kit"
-import { promises as fs } from 'fs';
+import { base } from '$app/paths';
 import type {Config} from "@sveltejs/adapter-vercel";
 
 export const config:Config={
@@ -12,7 +12,8 @@ export const config:Config={
 
 async function readFileAsString(filePath: string): Promise<string> {
   try {
-    const content = await fs.readFile(filePath, 'utf-8');
+    const txts = import.meta.glob('./*.txt', { as: 'text' });
+    const content = txts[base+"/static/prompt.txt"];
     return content;
   } catch (error) {
     console.error(`Error reading file: ${error.message}`);
