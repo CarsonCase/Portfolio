@@ -28,7 +28,7 @@
                 
 
                     <div class="flex justify-center">
-                        <img class="h-[300px]" src="Headshot.jpg" alt="">
+                        <img class="h-[300px]" src="assets/Headshot.jpg" alt="">
                     </div>
 
                 </div>

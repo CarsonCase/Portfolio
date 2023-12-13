@@ -2,7 +2,7 @@
     import Window from "./Window.svelte";
     import {base} from "$app/paths";
 
-    const PATH = "icons/"
+    const PATH = "assets/icons/"
     export let src = "Windows 7 Folder.png"
     export let display = false
     export let text = "My Folder"
