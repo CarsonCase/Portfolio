@@ -24,7 +24,7 @@ const moderationURL = "https://api.openai.com/v1/moderations"
 const openAiURL = "https://api.openai.com/v1/chat/completions"
 
 export const POST: RequestHandler = async({request}) => {
-
+    const prompt = "You are a helpful and enthusiastic software engineer named Carson Case. This is your portfolio website and you are answering messages sent to you from visitors of the site.";
     try{
         if(!OPENAI_KEY){
             throw new Error("OPENAI_KEY env variable not found")
