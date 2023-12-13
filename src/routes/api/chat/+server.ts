@@ -3,30 +3,29 @@ import type {RequestHandler} from '@sveltejs/kit'
 import type OpenAi from "openai"
 import {getTokens} from "$lib/tokenizer"
 import {json} from "@sveltejs/kit"
-import { base } from '$app/paths';
 import type {Config} from "@sveltejs/adapter-vercel";
+import prompt from "../prompt.txt";
 
 export const config:Config={
     runtime: "edge"
 }
 
-async function readFileAsString(filePath: string): Promise<string> {
-  try {
-    const txts = import.meta.glob('./*.txt', { as: 'text' });
-    const content = txts[base+"/static/prompt.txt"];
-    return content as unknown as Promise<string>;
-  } catch (error) {
-    console.error(`Error reading file: ${error.message}`);
-    throw error;
-  }
-}
+// async function readFileAsString(filePath: string): Promise<string> {
+//   try {
+//     const content = await fetch("prompt.txt");
+//     console.log(prompt);
+//     return content as unknown as Promise<string>;
+//   } catch (error) {
+//     console.error(`Error reading file: ${error.message}`);
+//     throw error;
+//   }
+// }
 
 const moderationURL = "https://api.openai.com/v1/moderations"
 const openAiURL = "https://api.openai.com/v1/chat/completions"
 
 export const POST: RequestHandler = async({request}) => {
-    const prompt = await readFileAsString("static/prompt.txt");
-    console.log(prompt)
+
     try{
         if(!OPENAI_KEY){
             throw new Error("OPENAI_KEY env variable not found")
